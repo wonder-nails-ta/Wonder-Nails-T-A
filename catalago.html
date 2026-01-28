@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/catalago.css">
+  <title> Wonder Nails T.A | Unhas Postiças</title>
+  <link rel="icon" href="img/logo-redondo.png">
+  <script src="script/script.js" defer></script>
+</head>
+
+<button id="btnTop" aria-label="Voltar ao topo">↑</button>
+
+<body>
+
+  <!-- BOTÃO FLUTUANTE DO CARRINHO -->
+  <div id="cart-float" onclick="toggleCart()">
+    <img src="img/carrinho-removebg-preview.png" alt="Carrinho">
+    <span id="cart-float-count">0</span>
+  </div>
+
+  <nav class="navbar">
+
+    <img src="img/logo-redondo.png" alt="imagem">
+
+    <div class="nometop">
+      <h1>Wonder Nails T.A</h1>
+    </div>
+
+    <!-- MENU NORMAL (CONTINUA VISÍVEL) -->
+    <ul class="menu">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="catalago.html">Produtos</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+    </ul>
+
+    <!-- BOTÃO SANDUÍCHE NA LATERAL -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </nav>
+
+  <!-- MENU LATERAL -->
+  <div class="side-menu" id="sideMenu">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="catalago.html">Produtos</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="mailto:wonder.nails.ta@gmail.com">Fale conosco</a></li>
+      <li><a href="index.html#politica">Política de Trocas e Devoluções</a></li>
+      <li><a href="index.html#avali">Deixe sua avaliação</a></li>
+    </ul>
+  </div>
+  <div class="overlay" id="overlay"></div>
+
+  </nav>
+
+  <div class="purple-marquee">
+    <div class="marquee-track">
+      <span>🚚 Envio rápido após a produção</span>
+      <span>📦 Embalagem segura</span>
+      <span>🔒 Compra protegida</span>
+
+      <!-- duplicado para loop infinito -->
+      <span>🚚 Envio rápido após a produção</span>
+      <span>📦 Embalagem segura</span>
+      <span>🔒 Compra protegida</span>
+
+      <!-- duplicado para loop infinito -->
+      <span>🚚 Envio rápido após a produção</span>
+      <span>📦 Embalagem segura</span>
+      <span>🔒 Compra protegida</span>
+
+      <!-- duplicado para loop infinito -->
+      <span>🚚 Envio rápido após a produção</span>
+      <span>📦 Embalagem segura</span>
+      <span>🔒 Compra protegida</span>
+
+      <!-- duplicado para loop infinito -->
+      <span>🚚 Envio rápido após a produção</span>
+      <span>📦 Embalagem segura</span>
+      <span>🔒 Compra protegida</span>
+    </div>
+  </div>
+
+  <div class="frete-info">
+    <p>📦 <strong>FRETE FIXO:</strong> R$ 20</p>
+    <p>🎉 <strong>FRETE GRÁTIS</strong> acima de R$ 99!</p>
+    <p id="frete-msg"></p>
+  </div>
+
+  <!-- BARRA DE PESQUISA -->
+<div class="search-container">
+  <input
+    type="search"
+    id="searchInput"
+    placeholder="Buscar produtos"
+    autocomplete="off"
+  >
+  <ul id="suggestions" class="suggestions"></ul>
+</div>
+
+<br>
+
+  <div class="filtro">
+    <button onclick="filtrar('todos')">Todos</button>
+    <button onclick="filtrar('quadrada')">Quadrada</button>
+    <button onclick="filtrar('almond')">Almond</button>
+    <button onclick="filtrar('bailarina')">Bailarina</button>
+    <button onclick="filtrar('estileto')">Estileto</button>
+    <button onclick="filtrar('cola')">Cola para unhas</button>
+  </div>
+
+  <main>
+    <section id="produtos">
+
+      <!-- PRODUTO 1 (MODELO: Blue Clouds)-->
+
+      <div class="product" data-tipo="bailarina" data-id="blue-clouds" data-estoque="1000">
+        <img src="img/MODELO - Blue Clouds.jpeg">
+        <h2>MODELO: Blue Clouds</h2>
+        <p>R$ 28,90</p>
+        <p class="status-estoque"></p>
+
+        <button class="btn-detalhes" onclick="toggleDescricao(this)">
+          Ver detalhes
+        </button>
+
+        <div class="descricao-produto">
+          <p>Contém 10 unhas postiças, embalagem protetora, mini lixa, cola adesiva dupla face/líquida para unhas e
+            instruções de aplicação/cuidados.</p>
+        </div>
+
+        <div class="tamanho-box">
+          <p class="tamanho-titulo">Escolha o tamanho:</p>
+          <label><input type="radio" name="tamanho-blue-clouds" value="S"> S (Pronta entrega)</label>
+          <label><input type="radio" name="tamanho-blue-clouds" value="M"> M (Pronta entrega)</label>
+          <label><input type="radio" name="tamanho-blue-clouds" value="L"> L (Pronta entrega)</label>
+          <label class="personalizado">
+            <input type="radio" name="tamanho-blue-clouds" value="Personalizado">
+            Personalizado (+R$ 5,90)
+          </label>
+        </div>
+
+        <span class="keywords">bailarina Blue azul clouds</span>
+
+        <button onclick="addToCart('MODELO: Blue Clouds', 28.90, 'blue-clouds')">Comprar</button>
+      </div>
+
+
+
+
+      <!-- PRODUTO 2 (MODELO: Basic Chic)-->
+
+      <div class="product" data-tipo="bailarina" data-id="basic-chic" id="basic-chic-modelo" data-estoque="1000">
+        <img src="img/MODELO - Basic Chic.jpeg">
+        <h2>MODELO: Basic Chic</h2>
+        <p>R$ 22,90</p>
+        <p class="status-estoque"></p>
+
+        <button class="btn-detalhes" onclick="toggleDescricao(this)">
+          Ver detalhes
+        </button>
+
+        <div class="descricao-produto">
+          <p>Contém 10 unhas postiças, embalagem protetora, mini lixa, cola adesiva dupla face/líquida para unhas e
+            instruções de aplicação/cuidados.</p>
+        </div>
+
+        <div class="tamanho-box">
+          <p class="tamanho-titulo">Escolha o tamanho:</p>
+          <label><input type="radio" name="tamanho-basic-chic" value="S"> S (Pronta entrega)</label>
+          <label><input type="radio" name="tamanho-basic-chic" value="M"> M (Pronta entrega)</label>
+          <label><input type="radio" name="tamanho-basic-chic" value="L"> L (Pronta entrega)</label>
+          <label class="personalizado">
+            <input type="radio" name="tamanho-basic-chic" value="Personalizado">
+            Personalizado (+R$ 5,90)
+          </label>
+        </div>
+
+        <span class="keywords"> Roxo basic basico chic bailarina</span>
+
+        <button onclick="addToCart('MODELO: Basic Chic', 22.90, 'basic-chic')">Comprar</button>
+      </div>
+
+
+
+
+      <!-- PRODUTO 3 (MODELO: Pink Cow)-->
+
+      <div class="product" data-tipo="almond" data-id="pink-cow" id="pink-cow-modelo" data-estoque="1000">
+        <img src="img/MODELO - Pink cow.jpeg">
+        <h2>MODELO: Pink Cow</h2>
+        <p>R$ 24,90</p>
+        <p class="status-estoque"></p>
+
+        <button class="btn-detalhes" onclick="toggleDescricao(this)">
+          Ver detalhes
+        </button>
+
+        <div class="descricao-produto">
+          <p>Contém 10 unhas postiças, embalagem protetora, mini lixa, cola adesiva dupla face/líquida para unhas e
+            instruções de aplicação/cuidados.</p>
+        </div>
+
+        <div class="tamanho-box">
+          <p class="tamanho-titulo">Escolha o tamanho:</p>
+          <label><input type="radio" name="tamanho-pink-cow" value="S"> S (Pronta entrega)</label>
+          <label><input type="radio" name="tamanho-pink-cow" value="M"> M (Pronta entrega)</label>
+          <label><input type="radio" name="tamanho-pink-cow" value="L"> L (Pronta entrega)</label>
+          <label class="personalizado">
+            <input type="radio" name="tamanho-pink-cow" value="Personalizado">
+            Personalizado (+R$ 5,90)
+          </label>
+        </div>
+
+        <span class="keywords">Pink Cow Rosa Almond Amendoado</span>
+
+        <button onclick="addToCart('MODELO: Pink Cow', 24.90, 'pink-cow')">Comprar</button>
+      </div>
+
+
+
+      <!-- PRODUTO 4 (MODELO: Roxo Basic)-->
+
+      <div class="product" data-tipo="bailarina" data-id="roxo-basic" id="roxo-basic-modelo" data-estoque="1000">
+        <img src="img/MODELO - Roxo Basic.jpeg">
+        <h2>MODELO: Roxo Basic</h2>
+        <p>R$ 26,90</p>
+        <p class="status-estoque"></p>
+
+        <button class="btn-detalhes" onclick="toggleDescricao(this)">
+          Ver detalhes
+        </button>
+
+        <div class="descricao-produto">
+          <p>Contém 10 unhas postiças, embalagem protetora, mini lixa, cola adesiva dupla face/líquida para unhas e
+            instruções de aplicação/cuidados.</p>
+        </div>
+
+        <div class="tamanho-box">
+          <p class="tamanho-titulo">Escolha o tamanho:</p>
+          <label><input type="radio" name="tamanho-roxo-basic" value="S"> S (Pronta entrega)</label>
+          <label><input type="radio" name="tamanho-roxo-basic" value="M"> M (Pronta entrega)</label>
+          <label><input type="radio" name="tamanho-roxo-basic" value="L"> L (Pronta entrega)</label>
+          <label class="personalizado">
+            <input type="radio" name="tamanho-roxo-basic" value="Personalizado">
+            Personalizado (+R$ 5,90)
+          </label>
+        </div>
+
+        <span class="keywords">roxo basic unha bailarina marmorizada lilás</span>
+
+        <button onclick="addToCart('MODELO: Roxo Basic', 26.90, 'roxo-basic')">Comprar</button>
+      </div>
+
+
+
+      <!-- PRODUTO 5 (Cola de Unhas - Sem pincel (1Uni)) (não tem escolha de tamanho)-->
+
+      <div class="product" data-tipo="cola" data-id="cola-unhas" data-estoque="0">
+        <img src="img/Cola liquida nail glue.jpeg" alt="Cola de Unhas">
+        <h2>Cola de Unhas - Sem pincel (1uni)</h2>
+        <p>R$ 6,90</p>
+        <p class="status-estoque"></p>
+
+        <button class="btn-detalhes" onclick="toggleDescricao(this)">
+          Ver detalhes
+        </button>
+
+        <div class="descricao-produto">
+          <p>Cola líquida para unhas postiças, embalagem de 3g, fácil aplicação.</p>
+        </div>
+
+        <span class="keywords">cola de unhas cola sem pincel liquida pequena</span>
+
+        <button onclick="addToCart('Cola de Unhas - Sem pincel (1Uni)', 6.90, 'cola-unhas')">Comprar</button>
+      </div>
+
+
+
+      <!-- PRODUTO 6 (Cola de Unhas - Com pincel (1uni)) (não tem escolha de tamanho)-->
+
+      <div class="product" data-tipo="cola" data-id="cola-unhas-compincel" data-estoque="0">
+        <img src="img/Cola liquida nail glue (com pincel).jpeg" alt="Cola de Unhas com pincel">
+        <h2>Cola de Unhas - Com pincel (1uni)</h2>
+        <p>R$ 12,90</p>
+        <p class="status-estoque"></p>
+
+        <button class="btn-detalhes" onclick="toggleDescricao(this)">
+          Ver detalhes
+        </button>
+
+        <div class="descricao-produto">
+          <p>Aplicação fácil, fixa bem e não faz sujeira. Ideal para unhas postiças e manutenção (10g)</p>
+        </div>
+
+        <span class="keywords">cola de unhas cola com pincel grande 10g</span>
+
+        <button onclick="addToCart('Cola de Unhas - Com pincel (1uni)', 12.90, 'cola-unhas-compincel')">Comprar</button>
+      </div>
+
+
+
+      <!-- PRODUTO 7 (KIT 2 Cola de Unhas - Com pincel (2uni)) (não tem escolha de tamanho)-->
+
+      <div class="product" data-tipo="cola" data-id="kit2-cola-unhas-compincel" data-estoque="0">
+        <img src="img/KIT - Cola de unhas com pincel.jpeg" alt=" KIT2 Cola de Unhas com pincel">
+        <h2>KIT 2 Cola de Unhas - Com pincel (2uni)</h2>
+        <p>R$ 22,90</p>
+        <p class="status-estoque"></p>
+
+        <button class="btn-detalhes" onclick="toggleDescricao(this)">
+          Ver detalhes
+        </button>
+
+        <div class="descricao-produto">
+          <p>Aplicação fácil, fixa bem e não faz sujeira. Ideal para unhas postiças e manutenção (10g 1UNI)</p>
+        </div>
+
+        <span class="keywords">kit de cola de unhas com pincel liquida  </span>
+
+        <button
+          onclick="addToCart('KIT 2 Cola de Unhas - Com pincel (2uni)', 22.90, 'kit2-cola-unhas-compincel')">Comprar</button>
+      </div>
+
+
+
+
+      <!-- PRODUTO 8 (DESING PERSONALIZADO - BAILARINA)-->
+
+      <div class="product" data-tipo="bailarina" data-id="DESIGN-PERSONALIZADO - bailarina" data-estoque="1000">
+        <img src="img/DESING-PERSONALIZADO-BAILARINA.jpeg">
+        <h2>Design Personalizado Exclusivo - Bailarina</h2>
+        <p>R$ 32,90</p>
+        <p class="status-estoque"></p>
+
+        <button class="btn-detalhes" onclick="toggleDescricao(this)">
+          Ver detalhes
+        </button>
+
+        <div class="descricao-produto">
+          <p> Contém 10 unhas postiças, design feito sob medida a partir do modelo enviado pela cliente. Ideal para
+            ocasiões especiais ou para quem deseja unhas exclusivas.</p>
+        </div>
+
+        <div class="tamanho-box">
+          <p class="tamanho-titulo">Escolha o tamanho:</p>
+          <label><input type="radio" name="tamanho-DESIGN-PERSONALIZADO - bailarina" value="S"> S (Pronta
+            entrega)</label>
+          <label><input type="radio" name="tamanho-DESIGN-PERSONALIZADO - bailarina" value="M"> M (Pronta
+            entrega)</label>
+          <label><input type="radio" name="tamanho-DESIGN-PERSONALIZADO - bailarina" value="L"> L (Pronta
+            entrega)</label>
+          <label class="personalizado">
+            <input type="radio" name="tamanho-DESIGN-PERSONALIZADO - bailarina" value="Personalizado">
+            Personalizado (+R$ 5,90)
+          </label>
+        </div>
+
+        <span class="keywords">bailarina design personalizado exclusivo</span>
+
+        <button
+          onclick="addToCart('Design Personalizado Exclusivo - Bailarina', 32.90, 'DESIGN-PERSONALIZADO - bailarina')">Comprar</button>
+      </div>
+
+
+
+
+      <!-- PRODUTO 9 (DESING PERSONALIZADO - QUADRADO MEDIO)-->
+
+      <div class="product" data-tipo="quadrada" data-id="DESIGN-PERSONALIZADO - quadrado medio" data-estoque="1000">
+        <img src="img/DESING-PERSONALIZADO-QUADRADO-MEDIO.jpeg">
+        <h2>Design Personalizado Exclusivo - Quadrado Médio</h2>
+        <p>R$ 30,90</p>
+        <p class="status-estoque"></p>
+
+        <button class="btn-detalhes" onclick="toggleDescricao(this)">
+          Ver detalhes
+        </button>
+
+        <div class="descricao-produto">
+          <p> Contém 10 unhas postiças, design feito sob medida a partir do modelo enviado pela cliente. Ideal para
+            ocasiões especiais ou para quem deseja unhas exclusivas.</p>
+        </div>
+
+        <div class="tamanho-box">
+          <p class="tamanho-titulo">Escolha o tamanho:</p>
+          <label><input type="radio" name="tamanho-DESIGN-PERSONALIZADO - quadrado medio" value="S"> S (Pronta
+            entrega)</label>
+          <label><input type="radio" name="tamanho-DESIGN-PERSONALIZADO - quadrado medio" value="M"> M (Pronta
+            entrega)</label>
+          <label><input type="radio" name="tamanho-DESIGN-PERSONALIZADO - quadrado medio" value="L"> L (Pronta
+            entrega)</label>
+          <label class="personalizado">
+            <input type="radio" name="tamanho-DESIGN-PERSONALIZADO - quadrado medio" value="Personalizado">
+            Personalizado (+R$ 5,90)
+          </label>
+        </div>
+
+        <span class="keywords">unha quadrada Design Personalizado Exclusivo - Quadrado Médio</span>
+
+        <button
+          onclick="addToCart('Design Personalizado Exclusivo - Quadrada Médio', 30.90, 'DESIGN-PERSONALIZADO - quadrado medio')">Comprar</button>
+      </div>
+
+
+
+      <!-- PRODUTO 10 (MODELO: encanto novo)-->
+
+      <div class="product" data-tipo="bailarina" data-id="Encanto-Branco" id="Encanto-Branco-modelo" data-estoque="1000">
+        <span class="selo-promocao">NOVIDADE</span>
+        <img src="img/MODELO- Encanto-Branco.jpeg">
+        <h2>MODELO: Encanto Branco</h2>
+        <p>R$ 28,90</p>
+        <p class="status-estoque"></p>
+
+        <button class="btn-detalhes" onclick="toggleDescricao(this)">
+          Ver detalhes
+        </button>
+
+        <div class="descricao-produto">
+          <p>Contém 10 unhas postiças, embalagem protetora, mini lixa, cola adesiva dupla face/líquida para unhas e
+            instruções de aplicação/cuidados.</p>
+        </div>
+
+        <div class="tamanho-box">
+          <p class="tamanho-titulo">Escolha o tamanho:</p>
+          <label><input type="radio" name="tamanho-Encanto-Branco" value="S"> S (Pronta entrega)</label>
+          <label><input type="radio" name="tamanho-Encanto-Branco" value="M"> M (Pronta entrega)</label>
+          <label><input type="radio" name="tamanho-Encanto-Branco" value="L"> L (Pronta entrega)</label>
+          <label class="personalizado">
+            <input type="radio" name="tamanho-Encanto-Branco" value="Personalizado">
+            Personalizado (+R$ 5,90)
+          </label>
+        </div>
+
+        <button onclick="addToCart('MODELO: Encanto Branco', 28.90, 'Encanto-Branco')">Comprar</button>
+      </div>
+
+      <span class="keywords">bailarina encanto novo branco</span>
+
+
+    </section>
+  </main>
+
+  <!-- CARRINHO -->
+  <div id="carrinho">
+    Carrinho: <span id="cart-count">0</span> itens
+
+    <div class="cart-total-box">
+      <strong>Total:</strong>
+      <span id="cart-total">R$ 0,00</span>
+    </div>
+
+    <ul id="cart-items"></ul>
+
+    <div id="form-entrega">
+      <h3>Dados para entrega</h3>
+      <input type="text" id="nome" placeholder="Nome completo">
+      <input type="text" id="cep" placeholder="CEP">
+      <input type="text" id="rua" placeholder="Rua">
+      <input type="text" id="numero" placeholder="Número">
+      <input type="text" id="bairro" placeholder="Bairro">
+      <input type="text" id="cidade" placeholder="Cidade / Estado">
+      <input type="text" id="cpf" placeholder="CPF" style="display:none;">
+    </div>
+
+    <button onclick="checkout()">Finalizar</button>
+  </div>
+
+
+  <!-- Botão flutuante Guia de Tamanhos -->
+  <button class="btn-flutuante-tamanho" onclick="toggleTabela()">
+    📏
+  </button>
+
+  <!-- Tabela de tamanhos -->
+  <div id="tabela-flutuante">
+    <img src="img/Tabela-de-tamanho-pronta-entrega.jpeg" alt="Tabela de tamanhos das unhas">
+  </div>
+
+
+  <footer>
+
+    <div class="site">
+
+
+      <h3>Fale conosco</h3>
+      <p>Tem dúvidas ou sugestões? Envie um email ou fale conosco no whatsapp:
+      </p>
+      <p class="links">
+        <a href="mailto:wonder.nails.ta@gmail.com">wondernailsta@gmail.com</a>
+      </p>
+      <p class="links">
+        <a href="https://wa.me/5575992696445" target="_blank">WhatsApp</a>
+      </p>
+
+      <h3> Siga nossas redes sociais</h3>
+      <p class="links">
+        <a href="https://www.instagram.com/wonder_nails.t.a?igsh=OHN6bG1seTZicDNu" target="_blank"> Instagram</a>
+      </p>
+
+      <p class="links">
+        <a href="https://www.tiktok.com/@wonder.nails.t.a?_r=1&_t=ZS-93GCFOvnv9x" target="_blank"> Tiktok</a>
+      </p>
+
+      <hr>
+
+      <p class="copyright">
+        © 2026 Wonder Nails T.A. Todos os direitos reservados. <br>
+        Este conteúdo é destinado à divulgação e comercialização de unhas postiças de qualidade.
+      </p>
+
+    </div>
+  </footer>
+</body>
+
+</html>

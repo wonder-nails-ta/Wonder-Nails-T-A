@@ -1,0 +1,332 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+.navbar {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 25px; /* DIMINUI A ALTURA DO NAV */
+  background: linear-gradient(90deg, #7312e9, #9d12c4);
+  color: rgb(255, 255, 255);
+  border-style: ridge;
+  border-width: thick;
+  gap: 15px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu {
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+
+.navbar img {
+  width: 70px;   /* DIMINUI A IMAGEM */
+  height: 70px;
+  margin-right: 20px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(49, 6, 72, 0.8);
+}
+
+.nometop {
+  font-family: BlinkMacSystemFont;
+}
+
+.navbar h1 {
+  flex: 1;
+  text-align: center;
+  font-size: 1.2rem; /* DIMINUI O TEXTO */
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 15px; /* DIMINUI ESPAÇO ENTRE ITENS */
+  margin: 0;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu li a:hover {
+  text-decoration: underline;
+  color: #b918bb;
+}
+
+
+
+.toposobre {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.toposobre h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  color: #6c14a6;
+  font-weight: 700;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* Linha decorativa embaixo do nome*/
+.toposobre h2::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(90deg, #7b1fa2, #ba68c8, #e1bee7);
+  margin: 8px auto 0 auto;
+  border-radius: 2px;
+}
+
+/*Textos*/
+
+
+.sobre {
+  font-family: 'Arial', sans-serif;
+  color: #6c14a6;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  line-height: 1.6;
+}
+
+.destaque {
+  color: #59086d;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.criadores {
+  background: #b671f649;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.criadores:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(102, 2, 127, 0.2);
+}
+
+.criadores h3 {
+  color: #6c14a6;
+  margin-bottom: 10px;
+}
+
+.diferencial h3 {
+  color: #6c14a6;
+  margin-bottom: 15px;
+}
+
+.diferencial ul {
+  list-style: disc inside;
+  margin-bottom: 20px;
+}
+
+.beneficios li {
+  margin-bottom: 10px;
+}
+
+.beneficios ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.beneficios li {
+  background: #b671f649;
+  color: #59086d;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s;
+}
+
+.beneficios li:hover {
+  background: #9f95dbb3;
+}
+
+
+
+/*Direitos autorais*/
+
+.site {
+  background-color: white;
+  padding: 30px 20px;
+  text-align: center;
+  border-top: 1px solid white;
+}
+
+.site h3 {
+  margin-top: 0;
+  color: black;
+  align-items: center;
+}
+
+.site p {
+  margin: 10px 0;
+  color: darkgray;
+  font-size: 14px;
+}
+
+.site a:hover {
+  text-decoration: underline;
+}
+
+.site hr {
+  margin: 2opx auto;
+  width: 60%;
+  border-top: 1px solid white;
+
+}
+
+.links a {
+  margin: o 5px;
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    font-size: 13px;
+  }
+}
+
+
+/* BOTÃO SANDUÍCHE */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+
+  position: absolute;
+  top: 15px;      /* LÁ EM CIMA */
+  left: 15px;    /* 👈 AGORA DO OUTRO LADO */
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+}
+
+
+
+/* MENU LATERAL */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;           /* COMEÇA FORA À ESQUERDA */
+  width: 75%;
+  height: 100vh;
+  background: linear-gradient(180deg, #7312e9, #9d12c4);
+  padding: 60px 20px;
+  transition: left 0.3s ease;
+  z-index: 3000;
+}
+
+.side-menu.active {
+  left: 0;               /* ENTRA PELA ESQUERDA */
+}
+
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu li {
+  margin-bottom: 20px;
+}
+
+.side-menu a {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+/* FUNDO ESCURO ATRÁS DO MENU */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 2500;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+/*seta de subir*/
+
+#btnTop {
+  position: fixed;
+  bottom: 300px;
+  right: 20px;
+
+  background: none;        /* SEM BOTÃO */
+  border: none;
+  padding: 0;
+
+  color: rgba(115, 18, 233, 0.6); /* discreto */
+  font-size: 46px;         /* tamanho da seta */
+
+  cursor: pointer;
+  display: none;
+  z-index: 9999;
+
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+#btnTop:hover {
+  opacity: 1;
+  transform: translateY(-3px); /* efeito sutil */
+}
+
+

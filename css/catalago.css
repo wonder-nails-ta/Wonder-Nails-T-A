@@ -1,0 +1,911 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+.navbar {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 25px; /* DIMINUI A ALTURA DO NAV */
+  background: linear-gradient(90deg, #7312e9, #9d12c4);
+  color: rgb(255, 255, 255);
+  border-style: ridge;
+  border-width: thick;
+  gap: 15px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu {
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+
+
+.navbar img {
+  width: 70px;   /* DIMINUI A IMAGEM */
+  height: 70px;
+  margin-right: 20px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(49, 6, 72, 0.8);
+}
+
+.nometop {
+  font-family: BlinkMacSystemFont;
+}
+
+.navbar h1 {
+  flex: 1;
+  text-align: center;
+  font-size: 1.2rem; /* DIMINUI O TEXTO */
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 15px; /* DIMINUI ESPAÇO ENTRE ITENS */
+  margin: 0;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu li a:hover {
+  text-decoration: underline;
+  color: #b918bb;
+}
+
+/*Tudo sobre os produtos, imagens, butões, etc*/
+
+
+main {
+  padding: 2rem;
+}
+
+#produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 130px;
+  padding: 50px;
+}
+
+.product {
+  background-color: rgb(255, 255, 255);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(58, 3, 90, 0.662);
+  text-align: center;
+  width: 200px;
+}
+
+.product h2 {
+  color: #6c14a6;
+}
+
+.product img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.product:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(184, 45, 239, 0.621);
+}
+
+
+button {
+  display: inline-block;
+  background: linear-gradient(90deg, #b22fd6, #54056a);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+nav ul li a:hover {
+  color: rgb(136, 27, 172)
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+
+
+/* Tudo sobre o carrinho*/
+
+
+#carrinho {
+  width: 300px;
+  /* Largura fixa */
+  margin: 50px auto;
+  /* Centraliza horizontalmente e dá espaçamento superior */
+  padding: 20px;
+  /* Espaçamento interno */
+  border: 2px solid #333;
+  /* Borda */
+  border-radius: 10px;
+  /* Cantos arredondados */
+  background-color: #f8f8f8;
+  /* Cor de fundo */
+  text-align: center;
+  /* Centraliza texto e elementos internos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Sombra leve */
+  font-family: Arial, sans-serif;
+  /* Fonte */
+}
+
+/* Lista de itens do carrinho */
+#cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+/* Botão estilizado */
+#carrinho button {
+  padding: 10px 20px;
+  background-color: #b61ec1;
+  /* Verde */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Botão muda de cor ao passar o mouse */
+#carrinho button:hover {
+  background-color: #8e39bc;
+}
+
+.cart-icon {
+  width: 24px;
+  /* ajuste o tamanho conforme necessário */
+  height: 24px;
+}
+
+/*Nome catalogo abaixo do rodapé*/
+.topcatalogo {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.topcatalogo h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  color: #6c14a6;
+  font-weight: 700;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* Linha decorativa embaixo do nome*/
+.topcatalogo h2::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(90deg, #7b1fa2, #ba68c8, #e1bee7);
+  margin: 8px auto 0 auto;
+  border-radius: 2px;
+}
+
+
+
+/* ===============================
+   CARRINHO FLUTUANTE
+=============================== */
+
+#cart-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #7b1fa2, #ba68c8);
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 8px 20px rgba(123, 31, 162, 0.5);
+  transition: transform 0.3s;
+}
+
+#cart-float:hover {
+  transform: scale(1.1);
+}
+
+#cart-float img {
+  width: 32px;
+}
+
+#cart-float-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ffe082;
+  color: #4a148c;
+  font-weight: bold;
+  font-size: 13px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===============================
+   PAINEL DO CARRINHO (FLUTUANTE)
+=============================== */
+
+#carrinho {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 320px;
+  max-height: 80vh;
+  overflow-y: auto;
+  display: none;
+  z-index: 9998;
+  background: #fdf7ff;
+  border: 2px solid #ba68c8;
+  box-shadow: 0 12px 30px rgba(106, 27, 154, 0.4);
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  #carrinho {
+    right: 10px;
+    left: 10px;
+    width: auto;
+    bottom: 90px;
+  }
+
+  #cart-float {
+  width: 55px;
+  height: 55px;
+  bottom: 70px;  /* mais alto no celular */
+  right: 30px;   /* não cola no canto */
+}
+}
+
+/* ===============================
+   TOTAL DO CARRINHO
+=============================== */
+
+.cart-total-box {
+  margin: 15px 0;
+  padding: 10px;
+  background: linear-gradient(90deg, #ede7f6, #f3e5f5);
+  border-radius: 8px;
+  font-size: 16px;
+  color: #4a148c;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/*formulario de entrega*/
+
+
+.frete-info {
+  background: linear-gradient(90deg, #7312e9, #9d12c4);
+  color: white;
+  padding: 15px;
+  margin: 20px auto;
+  width: 80%;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#frete-msg {
+  margin-top: 10px;
+  color: #ffe082;
+}
+
+.filtro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.filtro button {
+  margin: 5px;
+}
+
+#form-entrega {
+  margin-top: 20px;
+}
+
+#form-entrega input {
+  width: 90%;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+
+
+/* ===============================
+   ESTOQUE
+=============================== */
+
+.status-estoque {
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.disponivel {
+  color: green;
+}
+
+.esgotado {
+  color: red;
+}
+
+.product.esgotado-produto {
+  opacity: 0.5;
+}
+
+.product.esgotado-produto button {
+  background: gray;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+.descricao-produto {
+  display: none;
+  font-size: 14px;
+  margin-top: 10px;
+  color: #555;
+}
+
+.btn-detalhes {
+  background: none;
+  border: none;
+  color: #8e39bc;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+
+
+/*Rodapé direitos autorais*/
+
+footer {
+  width: 100%;
+  text-align: center;
+  clear: both;
+  /* garante que não flutue ao lado de produtos */
+  padding: 20px 0;
+  background-color: #f8f8f8;
+  /* ou sua cor */
+}
+
+.site {
+  background-color: white;
+  padding: 30px 20px;
+  text-align: center;
+  border-top: 1px solid white;
+}
+
+.site h3 {
+  margin-top: 0;
+  color: black;
+  align-items: center;
+}
+
+.site p {
+  margin: 10px 0;
+  color: darkgray;
+  font-size: 14px;
+}
+
+.site a:hover {
+  text-decoration: underline;
+}
+
+.site hr {
+  margin: 2opx auto;
+  width: 60%;
+  border-top: 1px solid white;
+
+}
+
+.links a {
+  margin: o 5px;
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    font-size: 13px;
+  }
+}
+
+/* ===============================
+   SELETOR DE TAMANHO
+=============================== */
+
+.tamanho-box {
+  margin: 12px 0;
+  padding: 10px;
+  background: #f3e5f5;
+  border-radius: 10px;
+  border: 1px solid #ba68c8;
+  text-align: left;
+  font-size: 14px;
+}
+
+.tamanho-titulo {
+  font-weight: bold;
+  color: #6c14a6;
+  margin-bottom: 6px;
+}
+
+.tamanho-box label {
+  display: block;
+  margin: 4px 0;
+  cursor: pointer;
+  color: #4a148c;
+}
+
+.tamanho-box input {
+  margin-right: 6px;
+}
+
+.tamanho-box .personalizado {
+  font-weight: bold;
+  color: #7b1fa2;
+}
+
+
+/* PROMOÇÃO QUANDO TIVER*/
+
+.selo-promocao {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #e63946;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 20px;
+  animation: pulse 1.5s infinite;
+  z-index: 10;
+}
+
+.product {
+  position: relative;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7);
+  }
+
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(230, 57, 70, 0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.preco-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.preco-antigo {
+  color: #999;
+  font-size: 14px;
+  text-decoration: line-through;
+}
+
+.preco-promocao {
+  color: #e63946;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+/* CENTRALIZAR PRODUTOS NO CELULAR */
+@media (max-width: 768px) {
+  #produtos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    /* diminui o espaço entre produtos */
+    padding: 20px;
+  }
+
+  .product {
+    width: 100%;
+    max-width: 320px;
+    /* tamanho bonito no celular */
+  }
+}
+
+
+/*PRODUTO PISCA AO VIM DIRECIONADO PELO INICIO EM CONFIRA PRODUTOS*/
+
+.product:target {
+  animation: flash 0.6s ease-in-out 1;
+}
+
+@keyframes flash {
+  0% {
+    box-shadow: 0 0 0 rgba(106, 44, 160, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 12px rgba(106, 44, 160, 0.7);
+  }
+
+  100% {
+    box-shadow: 0 0 0 rgba(106, 44, 160, 0);
+  }
+}
+
+
+/*botão de tamanho pronta entrega*/
+.btn-flutuante-tamanho {
+  position: fixed;
+  bottom: 140px;
+  right: 30px;
+  background-color: #e6d6f3;
+  color: #5a2d82;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+
+  /* CENTRALIZAÇÃO PERFEITA */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+}
+
+/* Caixa da tabela */
+#tabela-flutuante {
+  display: none;
+  position: fixed;
+  bottom: 210px;
+  /* acompanha o botão */
+  right: 16px;
+  background: #fff;
+  padding: 12px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  z-index: 998;
+}
+
+/* Imagem maior */
+#tabela-flutuante img {
+  width: 320px;
+  /* MAIOR */
+  max-width: 90vw;
+  /* não estoura no celular */
+  border-radius: 12px;
+}
+
+
+
+
+/*linha passando*/
+
+
+.purple-marquee {
+  width: 100%;
+  background: linear-gradient(90deg, #7312e9, #9d12c4);
+  box-shadow: 0 4px 12px rgba(75, 19, 102, 0.4);
+  overflow: hidden;
+  padding: 12px 0;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee-track span {
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0 10px;
+  white-space: nowrap;
+}
+
+/* animação */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-33.3333%);
+  }
+}
+
+/* 📱 Ajustes mobile */
+@media (max-width: 768px) {
+  .purple-marquee {
+    padding: 10px 0;
+  }
+
+  .marquee-track span {
+    font-size: 0.85rem;
+    padding: 0 22px;
+  }
+}
+
+
+/* BOTÃO SANDUÍCHE */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+
+  position: absolute;
+  top: 15px;      /* LÁ EM CIMA */
+  left: 15px;    /* 👈 AGORA DO OUTRO LADO */
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+}
+
+
+
+/* MENU LATERAL */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;           /* COMEÇA FORA À ESQUERDA */
+  width: 75%;
+  height: 100vh;
+  background: linear-gradient(180deg, #7312e9, #9d12c4);
+  padding: 60px 20px;
+  transition: left 0.3s ease;
+  z-index: 3000;
+}
+
+.side-menu.active {
+  left: 0;               /* ENTRA PELA ESQUERDA */
+}
+
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu li {
+  margin-bottom: 20px;
+}
+
+.side-menu a {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+/* FUNDO ESCURO ATRÁS DO MENU */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 2500;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/*seta de subir*/
+
+#btnTop {
+  position: fixed;
+  bottom: 300px;
+  right: 20px;
+
+  background: none;        /* SEM BOTÃO */
+  border: none;
+  padding: 0;
+
+  color: rgba(115, 18, 233, 0.6); /* discreto */
+  font-size: 46px;         /* tamanho da seta */
+
+  cursor: pointer;
+  display: none;
+  z-index: 9999;
+
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+#btnTop:hover {
+  opacity: 1;
+  transform: translateY(-3px); /* efeito sutil */
+}
+
+
+
+/*BARRA DE PESQUISA*/
+/* CONTAINER */
+.search-container {
+  position: relative;
+  width: 100%;
+  background: #f6f1ff;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e2d9ff;
+  display: flex;
+  justify-content: center;
+}
+
+/* INPUT */
+.search-container input {
+  width: 100%;
+  max-width: 520px;
+  padding: 12px 14px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #c7b6ff;
+  outline: none;
+}
+
+/* SUGESTÕES */
+.suggestions {
+  position: absolute;
+  top: 56px;
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  z-index: 999;
+}
+
+/* ITEM DA SUGESTÃO */
+.suggestions li {
+  padding: 12px 14px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* HOVER / TOQUE */
+.suggestions li:hover {
+  background: #f0e9ff;
+}
+
+/* 📱 AJUSTES MOBILE */
+@media (max-width: 500px) {
+  .search-container {
+    padding: 10px 12px;
+  }
+  @media (max-width: 768px) {
+  .search-container input {
+    width: 88%;
+    max-width: 340px;
+    padding: 12px 16px;
+  }
+}
+
+.search-container input::placeholder {
+  color: #9b7edc;
+}
+
+  .search-container input {
+    max-width: 100%;
+    font-size: 16px; /* evita zoom no iOS */
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  .suggestions {
+    top: 58px;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+}
+
+
+
+.keywords {
+  display: none;
+}
+
+
+
+
+
+
+
+
+/*ZOOM NA IMAGEM*/
+
+
+.product img {
+  transition: transform 0.3s ease;
+}
+.product img:hover {
+  transform: scale(1.08);
+}

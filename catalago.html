@@ -413,7 +413,6 @@
       <!-- PRODUTO 10 (MODELO: encanto novo)-->
 
       <div class="product" data-tipo="bailarina" data-id="Encanto-Branco" id="Encanto-Branco-modelo" data-estoque="1000">
-        <span class="selo-promocao">NOVIDADE</span>
         <img src="img/MODELO- Encanto-Branco.jpeg">
         <h2>MODELO: Encanto Branco</h2>
         <p>R$ 28,90</p>
@@ -476,6 +475,40 @@
         <span class="keywords">estileto Design Personalizado Exclusivo</span>
 
         <button onclick="addToCart('Design Personalizado Exclusivo - Estileto', 34.90, 'DESING PERSONALIZADO-ESTILETO')">Comprar</button>
+      </div>
+
+
+        <!-- PRODUTO 12 (MODELO-Doce Encanto Rosé)-->
+
+      <div class="product" data-tipo="quadrada" data-id="MODELO-Doce-Encanto-Rosé" data-estoque="1000">
+        <img src="img/MODELO-Doce-Encanto-Rosé.jpeg">
+        <h2>MODELO: Doce Encanto Rosé</h2>
+        <p>R$ 29,90</p>
+        <p class="status-estoque"></p>
+
+        <button class="btn-detalhes" onclick="toggleDescricao(this)">
+          Ver detalhes
+        </button>
+
+        <div class="descricao-produto">
+          <p>Contém 10 unhas postiças, embalagem protetora, mini lixa, cola adesiva dupla face/líquida para unhas e
+            instruções de aplicação/cuidados.</p>
+        </div>
+
+        <div class="tamanho-box">
+          <p class="tamanho-titulo">Escolha o tamanho:</p>
+          <label><input type="radio" name="tamanho-MODELO-Doce-Encanto-Rosé" value="S"> S (Pronta entrega)</label>
+          <label><input type="radio" name="tamanho-MODELO-Doce-Encanto-Rosé" value="M"> M (Pronta entrega)</label>
+          <label><input type="radio" name="tamanho-MODELO-Doce-Encanto-Rosé" value="L"> L (Pronta entrega)</label>
+          <label class="personalizado">
+            <input type="radio" name="tamanho-MODELO-Doce-Encanto-Rosé" value="Personalizado">
+            Personalizado (+R$ 5,90)
+          </label>
+        </div>
+
+        <span class="keywords"> quadrada laço lilás Doce Encanto Rosé</span>
+
+        <button onclick="addToCart('MODELO: Doce Encanto Rosé', 29.90, 'MODELO-Doce-Encanto-Rosé')">Comprar</button>
       </div>
 
 
@@ -556,3 +589,4 @@
 
 
 </html>
+

@@ -896,10 +896,6 @@ footer {
 
 
 
-
-
-
-
 /*ZOOM NA IMAGEM*/
 
 
@@ -908,4 +904,48 @@ footer {
 }
 .product img:hover {
   transform: scale(1.08);
+}
+
+
+
+
+/*LINHA MAIS NOME PARA SEPARAR coleção*/
+
+.toposobre {
+  grid-column: 1 / -1; /* ocupa todas as colunas */
+  text-align: center;
+  margin: 60px 0 40px;
+}
+
+.toposobre h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  color: #6c14a6;
+  font-weight: 700;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* Linha decorativa embaixo do nome*/
+.toposobre h2::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(90deg, #7b1fa2, #ba68c8, #e1bee7);
+  margin: 8px auto 0 auto;
+  border-radius: 2px;
+}
+
+/*LINHA SEM NOME NO FINAL*/
+
+.linha-colecao {
+  grid-column: 1 / -1; /* se estiver dentro da grid */
+  width: 60%;
+  height: 4px;
+  margin: 40px auto;
+  background: linear-gradient(90deg, #7b1fa2, #ba68c8, #e1bee7);
+  border-radius: 2px;
 }

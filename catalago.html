@@ -331,11 +331,11 @@
 
 
 
-      <!-- PRODUTO 8 (DESING PERSONALIZADO - BAILARINA)-->
+       <!-- PRODUTO 8 (DESING PERSONALIZADO SIMPLES- BAILARINA)-->
 
       <div class="product" data-tipo="bailarina" data-id="DESIGN-PERSONALIZADO - bailarina" data-estoque="1000">
         <img src="img/DESING-PERSONALIZADO-BAILARINA.jpeg">
-        <h2>Design Personalizado Exclusivo - Bailarina</h2>
+        <h2>Design Personalizado Exclusivo <strong>SIMPLES</strong> - Bailarina</h2>
         <p>R$ 59,90</p>
         <p class="status-estoque"></p>
 
@@ -344,7 +344,7 @@
         </button>
 
         <div class="descricao-produto">
-          <p> Contém 10 unhas postiças, design feito sob medida a partir do modelo enviado pela cliente. Ideal para
+          <p>Não inclui artes em 3D, relevos ou técnicas elaboradas como neotribal. Contém 10 unhas postiças, design feito sob medida a partir do modelo enviado pela cliente. Ideal para
             ocasiões especiais ou para quem deseja unhas exclusivas.</p>
         </div>
 
@@ -362,11 +362,50 @@
           </label>
         </div>
 
-        <span class="keywords">bailarina design personalizado exclusivo</span>
+        <span class="keywords">bailarina design personalizado simples exclusivo</span>
 
         <button
-          onclick="addToCart('Design Personalizado Exclusivo - Bailarina', 59.90, 'DESIGN-PERSONALIZADO - bailarina')">Comprar</button>
+          onclick="addToCart('Design Personalizado Exclusivo SIMPLES - Bailarina', 59.90, 'DESIGN-PERSONALIZADO - bailarina')">Comprar</button>
       </div>
+
+
+      <!-- (DESING PERSONALIZADO PREMIUM- BAILARINA)-->
+
+      <div class="product" data-tipo="bailarina" data-id="DESIGN-PERSONALIZADO-PREMIUM - bailarina" data-estoque="1000">
+        <img src="img/DESING-PERSONALIZADO-BAILARINA.jpeg">
+        <h2>Design Personalizado Exclusivo <strong>PREMIUM</strong> - Bailarina</h2>
+        <p>R$ 89,90</p>
+        <p class="status-estoque"></p>
+
+        <button class="btn-detalhes" onclick="toggleDescricao(this)">
+          Ver detalhes
+        </button>
+
+        <div class="descricao-produto">
+          <p>Design totalmente personalizado com liberdade para 3D, neotribal, relevos e múltiplos efeitos cromados. Perfeito para quem quer unhas marcantes e cheias de personalidade. Contém 10 unhas postiças, design feito sob medida a partir do modelo enviado pela cliente. Ideal para
+            ocasiões especiais ou para quem deseja unhas exclusivas.</p>
+        </div>
+
+        <div class="tamanho-box">
+          <p class="tamanho-titulo">Escolha o tamanho:</p>
+          <label><input type="radio" name="tamanho-DESIGN-PERSONALIZADO-PREMIUM - bailarina" value="S"> S (Pronta
+            entrega)</label>
+          <label><input type="radio" name="tamanho-DESIGN-PERSONALIZADO-PREMIUM - bailarina" value="M"> M (Pronta
+            entrega)</label>
+          <label><input type="radio" name="tamanho-DESIGN-PERSONALIZADO-PREMIUM - bailarina" value="L"> L (Pronta
+            entrega)</label>
+          <label class="personalizado">
+            <input type="radio" name="tamanho-DESIGN-PERSONALIZADO-PREMIUM - bailarina" value="Personalizado">
+            Personalizado (+R$ 5,90)
+          </label>
+        </div>
+
+        <span class="keywords">bailarina design personalizado premium exclusivo</span>
+
+        <button
+          onclick="addToCart('Design Personalizado Exclusivo PREMIUM - Bailarina', 89.90, 'DESIGN-PERSONALIZADO-PREMIUM - bailarina')">Comprar</button>
+      </div>
+
 
 
 
@@ -486,7 +525,7 @@
       <div class="product" data-tipo="estileto" data-id="DESING PERSONALIZADO-ESTILETO" data-estoque="1000">
         <img src="img/DESING-PERSONALIZADO-ESTILETO.jpeg">
         <h2>Design Personalizado Exclusivo <strong>SIMPLES</strong> - Estileto</h2>
-        <p>R$ 50,90</p>
+        <p>R$ 59,90</p>
         <p class="status-estoque"></p>
 
         <button class="btn-detalhes" onclick="toggleDescricao(this)">
@@ -512,7 +551,7 @@
         <span class="keywords">estileto Design Personalizado Exclusivo simples</span>
 
         <button
-          onclick="addToCart('Design Personalizado Exclusivo SIMPLES - Estileto', 50.90, 'DESING PERSONALIZADO-ESTILETO')">Comprar</button>
+          onclick="addToCart('Design Personalizado Exclusivo SIMPLES - Estileto', 59.90, 'DESING PERSONALIZADO-ESTILETO')">Comprar</button>
       </div>
 
 
@@ -804,6 +843,7 @@
 
 
 </html>
+
 
 
 

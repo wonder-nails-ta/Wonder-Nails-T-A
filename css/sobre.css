@@ -315,7 +315,7 @@ body {
   padding: 0;
 
   color: rgba(115, 18, 233, 0.6); /* discreto */
-  font-size: 46px;         /* tamanho da seta */
+  font-size: 67px;         /* tamanho da seta */
 
   cursor: pointer;
   display: none;
@@ -328,5 +328,6 @@ body {
   opacity: 1;
   transform: translateY(-3px); /* efeito sutil */
 }
+
 
 

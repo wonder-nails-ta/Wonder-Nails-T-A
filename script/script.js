@@ -258,25 +258,18 @@ function renderCartItems() {
 // ===============================
 function filtrar(tipo) {
   const produtos = document.querySelectorAll(".product");
-  const topos = document.querySelectorAll(".toposobre");
-  const linhas = document.querySelectorAll(".linha-colecao");
 
+  // Primeiro filtra os produtos normalmente
   produtos.forEach(prod => {
     if (tipo === "todos" || prod.dataset.tipo === tipo) {
-      prod.style.display = "block";
+      prod.style.display = prod.dataset.display;
     } else {
       prod.style.display = "none";
     }
   });
 
-  // 🔥 esconder ou mostrar TODOS os títulos
-  topos.forEach(topo => {
-    topo.style.display = (tipo === "todos") ? "block" : "none";
-  });
-
-  linhas.forEach(linha => {
-    linha.style.display = (tipo === "todos") ? "block" : "none";
-  });
+  // Depois atualiza categorias dinamicamente
+  atualizarCategorias();
 }
 
 // ===============================
@@ -697,5 +690,6 @@ function verificarBrinde() {
     cart = cart.filter(item => item.name !== NOME_BRINDE);
   }
 }
+
 
 

@@ -591,6 +591,44 @@ function filterProducts(value) {
       ? product.dataset.display
       : "none";
   });
+
+  atualizarCategorias();
+}
+
+function atualizarCategorias() {
+
+  const topos = document.querySelectorAll(".toposobre");
+
+  topos.forEach(topo => {
+
+    let elemento = topo.nextElementSibling;
+    let temProdutoVisivel = false;
+
+    while (elemento && !elemento.classList.contains("toposobre")) {
+
+      if (elemento.classList.contains("product") &&
+        elemento.style.display !== "none") {
+        temProdutoVisivel = true;
+      }
+
+      elemento = elemento.nextElementSibling;
+    }
+
+    const linha = topo.nextElementSibling;
+
+    if (temProdutoVisivel) {
+      topo.style.display = "block";
+      if (linha && linha.classList.contains("linha-colecao")) {
+        linha.style.display = "block";
+      }
+    } else {
+      topo.style.display = "none";
+      if (linha && linha.classList.contains("linha-colecao")) {
+        linha.style.display = "none";
+      }
+    }
+
+  });
 }
 
 searchInput.addEventListener("input", () => {
@@ -601,8 +639,18 @@ searchInput.addEventListener("input", () => {
       product.style.display = product.dataset.display;
     });
     suggestionsBox.style.display = "none";
+
+    document.querySelectorAll(".toposobre").forEach(t => {
+      t.style.display = "block";
+    });
+
+    document.querySelectorAll(".linha-colecao").forEach(l => {
+      l.style.display = "block";
+    });
     return;
   }
+
+
 
   filterProducts(value);
   showSuggestions(value);
@@ -649,4 +697,5 @@ function verificarBrinde() {
     cart = cart.filter(item => item.name !== NOME_BRINDE);
   }
 }
+
 

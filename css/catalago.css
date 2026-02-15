@@ -782,14 +782,14 @@ footer {
 #btnTop {
   position: fixed;
   bottom: 300px;
-  right: 20px;
+  right: 37px;
 
   background: none;        /* SEM BOTÃO */
   border: none;
   padding: 0;
 
   color: rgba(115, 18, 233, 0.6); /* discreto */
-  font-size: 46px;         /* tamanho da seta */
+  font-size: 67px;         /* tamanho da seta */
 
   cursor: pointer;
   display: none;
@@ -949,3 +949,4 @@ footer {
   background: linear-gradient(90deg, #7b1fa2, #ba68c8, #e1bee7);
   border-radius: 2px;
 }
+

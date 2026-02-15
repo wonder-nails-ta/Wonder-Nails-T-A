@@ -444,12 +444,12 @@
       </div>
 
 
-      <!-- PRODUTO 11 (DESING PERSONALIZADO-ESTILETO)-->
+      <!-- PRODUTO 11 (DESING PERSONALIZADO-ESTILETO SIMPLES)-->
 
       <div class="product" data-tipo="estileto" data-id="DESING PERSONALIZADO-ESTILETO" data-estoque="1000">
         <img src="img/DESING-PERSONALIZADO-ESTILETO.jpeg">
-        <h2>Design Personalizado Exclusivo - Estileto</h2>
-        <p>R$ 63,90</p>
+        <h2>Design Personalizado Exclusivo <strong>SIMPLES</strong> - Estileto</h2>
+        <p>R$ 50,90</p>
         <p class="status-estoque"></p>
 
         <button class="btn-detalhes" onclick="toggleDescricao(this)">
@@ -457,7 +457,7 @@
         </button>
 
         <div class="descricao-produto">
-          <p>Contém 10 unhas postiças, embalagem protetora, mini lixa, cola adesiva dupla face/líquida para unhas e
+          <p>Não inclui artes em 3D, relevos ou técnicas elaboradas como neotribal. Contém 10 unhas postiças, embalagem protetora, mini lixa, cola adesiva dupla face/líquida para unhas e
             instruções de aplicação/cuidados.</p>
         </div>
 
@@ -472,9 +472,48 @@
           </label>
         </div>
 
-        <span class="keywords">estileto Design Personalizado Exclusivo</span>
+        <span class="keywords">estileto Design Personalizado Exclusivo simples</span>
 
-        <button onclick="addToCart('Design Personalizado Exclusivo - Estileto', 63.90, 'DESING PERSONALIZADO-ESTILETO')">Comprar</button>
+        <button
+          onclick="addToCart('Design Personalizado Exclusivo Simples - Estileto', 50.90, 'DESING PERSONALIZADO-ESTILETO')">Comprar</button>
+      </div>
+
+
+
+      <!-- DESING PERSONALIZADO-ESTILETO PREMIUM-->
+
+      <div class="product" data-tipo="estileto" data-id="DESINGPERSONALIZADO-ESTILETO-PREMIUM" data-estoque="1000">
+        <img src="img/DESING-PERSONALIZADO-ESTILETO.jpeg">
+        <h2>Design Personalizado Exclusivo <strong>PREMIUM</strong> - Estileto</h2>
+        <p>R$ 89,90</p>
+        <p class="status-estoque"></p>
+
+        <button class="btn-detalhes" onclick="toggleDescricao(this)">
+          Ver detalhes
+        </button>
+
+        <div class="descricao-produto">
+          <p>Design totalmente personalizado com liberdade para 3D, neotribal, relevos e múltiplos 
+            efeitos cromados. Perfeito para quem quer unhas marcantes e cheias de personalidade. 
+            Contém 10 unhas postiças, embalagem protetora, mini lixa, cola adesiva dupla face/líquida 
+            para unhas e instruções de aplicação/cuidados.</p>
+        </div>
+
+        <div class="tamanho-box">
+          <p class="tamanho-titulo">Escolha o tamanho:</p>
+          <label><input type="radio" name="tamanho-DESINGPERSONALIZADO-ESTILETO-PREMIUM" value="S"> S (Pronta entrega)</label>
+          <label><input type="radio" name="tamanho-DESINGPERSONALIZADO-ESTILETO-PREMIUM" value="M"> M (Pronta entrega)</label>
+          <label><input type="radio" name="tamanho-DESINGPERSONALIZADO-ESTILETO-PREMIUM" value="L"> L (Pronta entrega)</label>
+          <label class="personalizado">
+            <input type="radio" name="tamanho-DESINGPERSONALIZADO-ESTILETO-PREMIUM" value="Personalizado">
+            Personalizado (+R$ 5,90)
+          </label>
+        </div>
+
+        <span class="keywords">estileto Design Personalizado Exclusivo premium</span>
+
+        <button
+          onclick="addToCart('Design Personalizado Exclusivo PREMIUM - Estileto', 89.90, 'DESINGPERSONALIZADO-ESTILETO-PREMIUM')">Comprar</button>
       </div>
 
 
@@ -728,6 +767,7 @@
 
 
 </html>
+
 
 
 

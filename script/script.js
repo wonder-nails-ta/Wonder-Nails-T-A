@@ -1,7 +1,7 @@
 // ===============================
 // CONFIGURAÇÕES DE FRETE
 // ===============================
-const FRETE_FIXO = 20;
+const FRETE_FIXO = 15;
 const FRETE_GRATIS = 100;
 
 // ===============================
@@ -690,6 +690,7 @@ function verificarBrinde() {
     cart = cart.filter(item => item.name !== NOME_BRINDE);
   }
 }
+
 
 
 

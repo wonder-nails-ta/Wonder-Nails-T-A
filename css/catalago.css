@@ -950,3 +950,52 @@ footer {
   border-radius: 2px;
 }
 
+
+
+
+/* SLIDER PRODUTO */
+.slider-produto {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.imagens-slider {
+  position: relative;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+}
+
+.slide.ativo {
+  display: block;
+}
+
+/* SETAS ROXAS */
+.seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(128, 0, 128, 0.8);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.seta:hover {
+  background: #a020f0;
+}
+
+.seta-esquerda {
+  left: 8px;
+}
+
+.seta-direita {
+  right: 8px;
+}

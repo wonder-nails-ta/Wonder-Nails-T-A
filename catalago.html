@@ -114,6 +114,7 @@
     <button onclick="filtrar('estileto')">Estileto</button>
     <button onclick="filtrar('cola')">Cola para unhas</button>
     <button onclick="filtrar('oleo-para-cuticulas')">Óleo para Cutículas</button>
+    <button onclick="filtrar('kit-presentes')">Kits para presentear e Sacolas</button>
   </div>
 
   <main>
@@ -974,6 +975,40 @@
           onclick="addToCart('Modelo: Noite Imperial', 69.90, 'modelo-noite-imperial')">Comprar</button>
       </div>
 
+
+
+
+      <!--KIT PARA PRESENTEAR E SACOLINHAS-->
+
+      <div class="toposobre" id="KIT-PARA-PRESENTEAR">
+        <h2>Kits para presentear e Sacolinhas</h2>
+      </div>
+
+
+
+       <!-- PRODUTO 1 (Sacola Média)-->
+
+
+       <div class="product" data-tipo="kit-presentes" data-id="sacola-media" data-estoque="1000">
+        <img src="img/Sacola-frente-media-14,5-por-19,5.jpeg" alt="sacola média">
+        <h2>Sacola Presenteável <strong>Média</strong> - Ideal para montar seu presente</h2>
+        <p>R$ 9,90</p>
+        <p class="status-estoque"></p>
+
+        <button class="btn-detalhes" onclick="toggleDescricao(this)">
+          Ver detalhes
+        </button>
+
+        <div class="descricao-produto">
+          <p>Perfeita para transformar qualquer produto em um presente encantador. 
+            A sacola possui tamanho médio (14,5 x 19,5), ótima estrutura e acabamento delicado, 
+            ideal para kits, lembranças e momentos especiais.</p>
+        </div>
+
+        <span class="keywords">Sacola Presenteável MÉDIA - Ideal para montar seu presente sacolinha</span>
+
+        <button onclick="addToCart('Sacola Presenteável MÉDIA - Ideal para montar seu presente', 9.90, 'sacola-media')">Comprar</button>
+      </div>
       
 
 
@@ -1362,6 +1397,7 @@
 
 
 </html>
+
 
 
 

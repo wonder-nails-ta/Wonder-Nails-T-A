@@ -1028,3 +1028,116 @@ nav a {
 }
 
 
+
+
+
+
+
+/*CARROSSEL NOSSOS QUERIDINHOS */
+
+.queridinhos-container {
+  width: 100%;
+  padding: 30px 10px;
+}
+
+.queridinhos-titulo {
+  text-align: center;
+  color: #5a189a;
+  margin-bottom: 20px;
+}
+
+.queridinhos-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.queridinhos-carrossel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.queridinhos-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+}
+
+/* PRODUTO */
+.queridinho-item {
+  min-width: 235px;
+  max-width: 235px;
+  text-align: center;
+}
+
+.queridinho-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.queridinho-item p {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 8px 0 4px;
+  color:#6e00bd;
+
+}
+
+.queridinho-item span {
+  color: #5a189a;
+  font-weight: bold;
+}
+
+.queridinho-item a {
+  display: inline-block;
+  margin-top: 6px;
+  background: #7b2cbf;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+/* SETAS MAIS PRA DENTRO */
+.queridinhos-seta {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: #7b2cbf;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.queridinhos-esquerda {
+  left: 10px;
+}
+
+.queridinhos-direita {
+  right: 10px;
+}
+
+/* BOLINHAS */
+.queridinhos-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 6px;
+}
+
+.queridinhos-dots span {
+  width: 8px;
+  height: 8px;
+  background: #d0b3ff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.queridinhos-dots .ativo {
+  background: #5a189a;
+}
+

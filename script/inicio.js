@@ -87,3 +87,101 @@ btnTop.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+
+
+
+
+/*CARROSSEL NOSSOS QUERIDINHOS */
+
+const track = document.querySelector('.queridinhos-track');
+const items = document.querySelectorAll('.queridinho-item');
+const dotsContainer = document.getElementById('queridinhosDots');
+const carrossel = document.querySelector('.queridinhos-carrossel');
+
+let index = 0;
+let itemWidth;
+let itemsPerView;
+let maxIndex;
+
+// calcular tudo corretamente
+function calcular() {
+  itemWidth = items[0].offsetWidth + 20;
+  itemsPerView = Math.floor(carrossel.offsetWidth / itemWidth);
+  maxIndex = items.length - itemsPerView;
+
+  if (maxIndex < 0) maxIndex = 0;
+}
+
+// criar bolinhas por “tela”
+function criarDots() {
+  dotsContainer.innerHTML = "";
+
+  for (let i = 0; i <= maxIndex; i++) {
+    let dot = document.createElement("span");
+    dot.addEventListener("click", () => {
+      index = i;
+      atualizar();
+    });
+    dotsContainer.appendChild(dot);
+  }
+}
+
+function atualizar() {
+  track.style.transform = `translateX(-${index * itemWidth}px)`;
+
+  const dots = document.querySelectorAll('.queridinhos-dots span');
+  dots.forEach(dot => dot.classList.remove('ativo'));
+  if (dots[index]) dots[index].classList.add('ativo');
+}
+
+// 👉 setas corrigidas
+document.querySelector('.queridinhos-direita').onclick = () => {
+  index++;
+  if (index > maxIndex) index = 0;
+  atualizar();
+};
+
+document.querySelector('.queridinhos-esquerda').onclick = () => {
+  index--;
+  if (index < 0) index = maxIndex;
+  atualizar();
+};
+
+// 👉 auto sem cortar último produto
+setInterval(() => {
+  index++;
+  if (index > maxIndex) index = 0;
+  atualizar();
+}, 4000);
+
+// 👉 swipe corrigido
+let startX = 0;
+
+track.addEventListener('touchstart', e => {
+  startX = e.touches[0].clientX;
+});
+
+track.addEventListener('touchend', e => {
+  let endX = e.changedTouches[0].clientX;
+
+  if (startX > endX) index++;
+  else index--;
+
+  if (index > maxIndex) index = 0;
+  if (index < 0) index = maxIndex;
+
+  atualizar();
+});
+
+// iniciar
+window.addEventListener("load", () => {
+  calcular();
+  criarDots();
+  atualizar();
+});
+
+window.addEventListener("resize", () => {
+  calcular();
+  criarDots();
+  atualizar();
+});
